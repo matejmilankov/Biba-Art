@@ -3080,7 +3080,7 @@ a {
   }
 }
 .pre-loader-img-wrap {
-  position: relative;
+  overflow: hidden;
 }
 #w-node-eb2f9c08-64f6-78ad-f786-7e59685929ef-8dbab36d {
   grid-area: 5 / 5 / 10 / 9;
