@@ -117,27 +117,17 @@ let scrollTl = gsap.timeline({
     start: "top top",
     end: "bottom bottom",
     scrub: 1,
-    onEnterBack: () => {
-      gsap.to(".about-svg, .zoom-overlay", {
-        opacity: 0,
-        duration: 0.5
-      })
-    }
   }
 });
 scrollTl.to(targetElementOne, {
   scale: 3,
-  onComplete: () => {
-    gsap.to(".about-svg", {
-      opacity: 1,
-      duration: 0.2
-    });
-    gsap.to(".zoom-overlay", {
-      opacity: 0.4,
+}).to(".about-svg", {
+  opacity: 1,
+  duration: 0.2
+}, "<").to(".zoom-overlay", {
+  opacity: 0.4,
       duration: 0.3
-    });
-  }
-}).from(targetElementTwo, {
+}, "<").from(targetElementTwo, {
   scale: 1.4
 }, "<").to(targetElementThree, {
   opacity: 0,
