@@ -47,26 +47,27 @@ let tl = gsap.timeline();
 tl.from(".pre-loader-img-wrap", {
   delay: 1,
   duration: 0.4,
-  stagger: {each: 0.4, from: "random"},
+  stagger: {amount: 0.8, from: "random"},
   opacity: "0",
-  ease: "power3.out",
+  ease: "power1.out",
   scale: 0.8
 }).to(".pre-loader-wrap", {
-  yPercent: "-100",
-  duration: 1.5,
+  opacity: 0,
+  duration: 1,
   ease: "expo.inOut",
+  display: "none"
 }).to(".hero-svg-first", {
   opacity: 1,
-  rotationX: 0,
-  duration: 1.2,
-  ease: "power2.inOut",
+  y: "0",
+  duration: 2,
+  ease: "power4.out",
   scale: 1,
   stagger: {amount: 0.2}
 }, ">-0.5").from(".content-wrap, .label-text-wrap", {
   opacity: 0,
   duration: 0.5,
   ease: "power2.in"
-},"<0.7").from(".img-hero", {
+},"<0.2").from(".img-hero", {
   duration: 0.5,
   stagger: {each: 0.4},
   opacity: "0",
@@ -180,4 +181,4 @@ let scrollTl = gsap.timeline({
      } 
   }
 });
-})
+});
