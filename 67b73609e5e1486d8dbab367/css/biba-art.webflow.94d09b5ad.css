@@ -2978,15 +2978,17 @@ a {
 .lightbox-container {
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   opacity: 0;
   padding: 4rem 5rem;
+   z-index: 9;
 }
 
 
@@ -2997,7 +2999,7 @@ a {
   width: 30px;
   height: 30px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 10;
 }
 
 .close-sticky-one,
@@ -3022,4 +3024,11 @@ a {
 
 .product-img {
   cursor: pointer;
+}
+
+@supports not (backdrop-filter: blur(20px)) {
+  .element {
+    /* fallback stil u slučaju da backdrop-filter nije podržan */
+    background-color: rgba(255, 255, 255, 0.5); 
+  }
 }
